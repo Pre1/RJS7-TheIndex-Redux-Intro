@@ -3,5 +3,17 @@ import ReactDOM from "react-dom";
 import registerServiceWorker from "./registerServiceWorker";
 import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import { createStore } from "redux"; // 1
+import { Provider } from "react-redux"; // 2
+
+import reducer from "./store/reducer"; //3
+
+const store = createStore(reducer); // 4 reducer is a func () => {}
+
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById("root")
+);
 registerServiceWorker();
