@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
 // import * as actionsCreator from "./store/actions"
-import {addAuthor} from "./store/actions"
-import {connect} from "react-redux";
+import { addAuthor } from "./store/actions";
+import { connect } from "react-redux";
 
 class Sidebar extends Component {
-  
-  newAuthor = () => { return {
+  newAuthor = () => {
+    return {
       id: 5,
       first_name: "Author",
       last_name: "McAuthorFace",
@@ -18,10 +18,10 @@ class Sidebar extends Component {
           color: "mysterious color"
         }
       ]
-    }};
+    };
+  };
 
   render() {
-
     return (
       <div id="sidebar">
         <img src="theindex.svg" className="logo" alt="the index logo" />
@@ -30,7 +30,9 @@ class Sidebar extends Component {
             <button>AUTHORS</button>
           </h4>
           <h4 className="menu-item">
-            <button onClick={()=>this.props.onAddAuthor(this.newAuthor())}>+ ADD AUTHOR</button>
+            <button onClick={() => this.props.onAddAuthor(this.newAuthor())}>
+              + ADD AUTHOR
+            </button>
           </h4>
         </section>
       </div>
@@ -40,10 +42,11 @@ class Sidebar extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddAuthor: (auth) => dispatch(addAuthor(auth)),
-  }
-}
+    onAddAuthor: auth => dispatch(addAuthor(auth))
+  };
+};
 
 export default connect(
   null,
-  mapDispatchToProps)(Sidebar);
+  mapDispatchToProps
+)(Sidebar);

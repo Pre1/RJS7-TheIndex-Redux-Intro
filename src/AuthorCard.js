@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import {deleteAuthor} from "./store/actions"
-import {connect} from "react-redux";
+import { deleteAuthor } from "./store/actions";
+import { connect } from "react-redux";
 
 class AuthorCard extends Component {
   render() {
@@ -23,13 +23,13 @@ class AuthorCard extends Component {
             </h5>
             <small className="card-text">{author.books.length} books</small>
           </div>
-          
-          <button 
-          className="btn btn-danger" 
-          onClick={() => this.props.onDeleteAuthor(author)}>
-           DELETE
-          </button>
 
+          <button
+            className="btn btn-danger"
+            onClick={() => this.props.onDeleteAuthor(author)}
+          >
+            DELETE
+          </button>
         </div>
       </div>
     );
@@ -38,10 +38,11 @@ class AuthorCard extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onDeleteAuthor: (auth) => dispatch(deleteAuthor(auth))
-  }
-}
+    onDeleteAuthor: auth => dispatch(deleteAuthor(auth))
+  };
+};
 
 export default connect(
   null,
-  mapDispatchToProps)(AuthorCard);
+  mapDispatchToProps
+)(AuthorCard);

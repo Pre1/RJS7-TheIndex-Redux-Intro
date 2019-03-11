@@ -1,6 +1,6 @@
-const ADD_AUTHOR = "ADD_AUTHOR"
+export const ADD_AUTHOR = "ADD_AUTHOR"
 
-const DELETE_AUTHOR = "DELETE_AUTHOR"
+export const DELETE_AUTHOR = "DELETE_AUTHOR"
 
 
 // the action to be dispatched to add a new author 
